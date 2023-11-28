@@ -12,6 +12,12 @@ spec:
       - name: slack-notification
         image: curlimages/curl
         command: 
-          - curl https://example.com
+          - "curl"
+          - "-X"
+          - "POST"
+          - "--data-urlencode"
+          - "payload={\"channel\": \"#somechannel\", \"username\": \"hello\", \"text\": \"App Sync succeeded\", \"icon_emoji\": \":ghost:\"}"
+          - "https://385a-87-197-129-110.ngrok-free.app"
+
       restartPolicy: Never
   backoffLimit: 2
