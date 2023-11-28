@@ -8,7 +8,7 @@ data:
       server {
         listen 80;
         location / {
-          return 200 "===============================\n\n   This is your helm deploy version two!   \n\n===============================\n";
+          return 200 "===============================\n\n   Hallo !   \n\n===============================\n";
         }
       }
     }
