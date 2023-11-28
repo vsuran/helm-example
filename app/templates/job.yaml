@@ -3,7 +3,7 @@ kind: Job
 metadata:
   generateName: app-slack-notification-fail-
   annotations:
-    argocd.argoproj.io/hook: SyncFail
+    argocd.argoproj.io/hook: Post-sync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   template:
@@ -17,6 +17,6 @@ spec:
           - "POST"
           - "--data-urlencode"
           - "payload={\"channel\": \"#somechannel\", \"username\": \"hello\", \"text\": \"App Sync failed\", \"icon_emoji\": \":ghost:\"}"
-          - "https://hooks.slack.com/services/..."
+          - "https://385a-87-197-129-110.ngrok-free.app"
       restartPolicy: Never
   backoffLimit: 2
